@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //SubjectsTableSeederが反映されるように記載が必要
+        //call(反映させたいTableSeeder名::class)
+        $this->call(SubjectsTableSeeder::class);
+
+
 
     }
 }
