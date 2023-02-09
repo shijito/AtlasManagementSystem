@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
         //SubjectsTableSeederが反映されるように記載が必要
         //call(反映させたいTableSeeder名::class)
         $this->call(SubjectsTableSeeder::class);
+        
+        $this->call(UsersTableSeeder::class);
 
 
 
