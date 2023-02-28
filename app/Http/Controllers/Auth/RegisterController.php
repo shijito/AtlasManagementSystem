@@ -68,6 +68,18 @@ class RegisterController extends Controller
             $birth_day = date('Y-m-d', strtotime($data));
             $subjects = $request->subject;
 
+            // $validator = Validator::make($request->all(), [
+            //     'over_name' => 'required|string|max:10',
+            //     'under_name' => 'required|string|max:10',
+            //     'over_name_kana' => 'required|string|max:30|/^[ァ-ン]+*$/u',
+            //     'under_name_kana' => 'required|string|max:30|/^[ァ-ン]+*$/u',
+            //     'mail_address' => 'required|string|email|unique:users|max:100',
+            //     'sex' => 'required|in:1,2,3',
+            //     'birth_day' => 'required|',
+            //     'role' => 'required|in:1,2,3,4',
+            //     'password' => 'required|string|between:8,30|confirmed',
+            // ]);
+
             $user_get = User::create([
                 'over_name' => $request->over_name,
                 'under_name' => $request->under_name,
