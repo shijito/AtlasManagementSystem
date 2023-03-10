@@ -79,6 +79,10 @@ class RegisterController extends Controller
             //     'role' => 'required|in:1,2,3,4',
             //     'password' => 'required|string|between:8,30|confirmed',
             // ]);
+            // if($validator->fails()){
+            //     return redirect()->back()
+            //     ->withErrors($validator);
+            // }
 
             $user_get = User::create([
                 'over_name' => $request->over_name,
@@ -91,6 +95,7 @@ class RegisterController extends Controller
                 'role' => $request->role,
                 'password' => bcrypt($request->password)
             ]);
+            
             $user = User::findOrFail($user_get->id);
             $user->subjects()->attach($subjects);
             DB::commit();
