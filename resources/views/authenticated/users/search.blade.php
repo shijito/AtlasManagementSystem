@@ -26,7 +26,7 @@
         @elseif($user->sex == 2)
         <span>性別 : </span><span>女</span>
         @elseif($user->sex == 3)
-        <span>性別 : </span><span>その他</span>
+        <span>性別 : </span><span>その他</span><!--追加-->
         @endif
       </div>
       <div>
@@ -45,7 +45,10 @@
       </div>
       <div>
         @if($user->role == 4)
-        <span>選択科目 :</span><!--user->idに結びついている科目を表示する-->
+        <span>選択科目 :</span>
+          @foreach($user->subjects as $subject)<!--追加-->
+            <span>{{ $subject->subject }}</span>
+          @endforeach
         @endif
       </div>
     </div>
