@@ -23,8 +23,10 @@
       <div>
         @if($user->sex == 1)
         <span>性別 : </span><span>男</span>
-        @else
+        @elseif($user->sex == 2)
         <span>性別 : </span><span>女</span>
+        @elseif($user->sex == 3)
+        <span>性別 : </span><span>その他</span>
         @endif
       </div>
       <div>
@@ -43,7 +45,7 @@
       </div>
       <div>
         @if($user->role == 4)
-        <span>選択科目 :</span>
+        <span>選択科目 :</span><!--user->idに結びついている科目を表示する-->
         @endif
       </div>
     </div>
@@ -88,6 +90,12 @@
           </div>
           <div class="selected_engineer">
             <label>選択科目</label>
+            <select name="subjects" form="userSearchRequest" class="engineer">
+              <option selected disabled>----</option>
+              <option value="1">国語</option>
+              <option value="2">数学</option>
+              <option value="3">英語</option>
+            </select>
           </div>
         </div>
       </div>
