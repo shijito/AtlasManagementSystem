@@ -93,7 +93,7 @@
             </select>
           </div>
           <div class="selected_engineer">
-            <label>選択科目</label>
+            <label>選択科目</label><!--下記subject追加-->
             @foreach($subjects as $subject)
             <div class="">
               <label>{{ $subject->subject }}</label>

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Auth;
 
 class TopsController extends Controller
-{
+{    
+
     public function show(){
         return view('authenticated.top.top');
     }
