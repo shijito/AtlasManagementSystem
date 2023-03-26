@@ -4,6 +4,8 @@ namespace App\Models\Categories;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Categories\MainCategory;
+
 class SubCategory extends Model
 {
     const UPDATED_AT = null;
@@ -13,7 +15,7 @@ class SubCategory extends Model
         'sub_category',
     ];
     public function mainCategory(){
-        // リレーションの定義
+        return $this->belongsTo('App\Models\Categories\MainCategory');// リレーションの定義、多対単（サブ対メイン）
     }
 
     public function posts(){

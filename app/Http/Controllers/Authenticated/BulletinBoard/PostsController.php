@@ -11,6 +11,7 @@ use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
+use Illuminate\Support\Facades\Validator;
 use Auth;
 
 class PostsController extends Controller
@@ -58,10 +59,21 @@ class PostsController extends Controller
     }
 
     public function postEdit(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'post_title' => 'required | string | max:100',
+            'post_body' => 'required | string | max:5000',
+        ]);
+        if($validator->fails()){
+            return redirect()->back()
+            ->withErrors($validator);
+        }
+
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
         ]);
+
         return redirect()->route('post.detail', ['id' => $request->post_id]);
     }
 
@@ -73,6 +85,14 @@ class PostsController extends Controller
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
+    // public function subCategoryCreate(Request $request){
+    //     $sub_category = SubCategory::create([
+    //     'main_category_id' => $request->main_category_id,
+    //     'sub_category' => $request->sub_category_name,
+    //     ]);
+    //     return redirect()->route('post.input');
+    // }
+
 
     public function commentCreate(Request $request){
         PostComment::create([
@@ -121,4 +141,6 @@ class PostsController extends Controller
 
         return response()->json();
     }
+
+
 }
