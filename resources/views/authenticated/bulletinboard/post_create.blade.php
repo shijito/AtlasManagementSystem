@@ -8,11 +8,13 @@
       <select class="w-100" form="postCreate" name="post_category_id">
         @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}"></optgroup>
+          @foreach($sub_categories as $sub_category)
+            @if($main_category->id == $sub_category->main_category_id)
+              <option>{{ $sub_category->sub_category }}</option>
+            @endif
+          @endforeach
         @endforeach
         <!-- サブカテゴリ―表示 -->
-        @foreach($sub_categories as $sub_category)
-          <option>{{ $sub_category->sub_category }}</option>
-        @endforeach
       </select>
     </div>
     <div class="mt-3">
