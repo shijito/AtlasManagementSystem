@@ -5,6 +5,7 @@ namespace App\Models\Categories;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Categories\MainCategory;
+use App\Models\Posts;
 
 class SubCategory extends Model
 {
@@ -19,6 +20,6 @@ class SubCategory extends Model
     }
 
     public function posts(){
-        // リレーションの定義
+        return $this->belongsToMany('App\Models\Posts', 'sub_categories', 'sub_category_id', 'post_id');// リレーションの定義
     }
 }
