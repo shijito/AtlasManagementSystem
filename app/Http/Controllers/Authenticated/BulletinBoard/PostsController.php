@@ -46,7 +46,8 @@ class PostsController extends Controller
 
     public function postInput(){
         $main_categories = MainCategory::get();
-        return view('authenticated.bulletinboard.post_create', compact('main_categories'));
+        $sub_categories = SubCategory::get();//試し追記
+        return view('authenticated.bulletinboard.post_create', compact('main_categories' , 'sub_categories'));//sub_categories試し追記
     }
 
     public function postCreate(PostFormRequest $request){
@@ -68,12 +69,10 @@ class PostsController extends Controller
             return redirect()->back()
             ->withErrors($validator);
         }
-
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
         ]);
-
         return redirect()->route('post.detail', ['id' => $request->post_id]);
     }
 

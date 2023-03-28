@@ -10,7 +10,9 @@
         <optgroup label="{{ $main_category->main_category }}"></optgroup>
         @endforeach
         <!-- サブカテゴリ―表示 -->
-        
+        @foreach($sub_categories as $sub_category)
+          <option>{{ $sub_category->sub_category }}</option>
+        @endforeach
       </select>
     </div>
     <div class="mt-3">
@@ -43,14 +45,19 @@
       <!-- サブカテゴリー追加 -->
       <div class="">
         <p class="m-0">サブカテゴリー</p>
+        <select class="w-100" name="main_category_id" form="subCategoryRequest">
+            <option selected disabled>----</option>
+            @foreach($main_categories as $main_category)
+            <option value="{{ $main_category->id }}" name="main_category_id">{{ $main_category->main_category }}</option>
+            @endforeach
+        </select>
+        <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
+        <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
+      </div>  
         <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">{{ csrf_field() }}
-          <!-- <select class="w-100" name="main_category_name" form="mainCategoryRequest"> -->
-              <!-- <option selected disabled>----</option> -->
-              <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
-          <!-- </select> -->
-          <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
         </form>
-      </div>
+        <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">{{ csrf_field() }}
+        </form>
     </div>
   </div>
   @endcan
