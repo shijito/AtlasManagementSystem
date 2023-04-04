@@ -26,6 +26,9 @@ class PostFormRequest extends FormRequest
         return [
             'post_title' => 'min:4|max:50',
             'post_body' => 'min:10|max:500',
+            'main_category_name' => 'unique:main_categories,main_category|max:100',
+            'main_category_id' => 'some:main_categories,main_category_id',
+            'sub_category_name' => 'unique:sub_categories,sub_category|max:100',
         ];
     }
 

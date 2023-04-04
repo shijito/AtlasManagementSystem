@@ -11,7 +11,7 @@ use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
-use Illuminate\Support\Facades\Validator;
+// use Illuminate\Support\Facades\Validator;
 use Auth;
 
 class PostsController extends Controller
@@ -60,15 +60,6 @@ class PostsController extends Controller
     }
 
     public function postEdit(Request $request){
-
-        $validator = Validator::make($request->all(), [
-            'post_title' => 'required | string | max:100',
-            'post_body' => 'required | string | max:5000',
-        ]);
-        if($validator->fails()){
-            return redirect()->back()
-            ->withErrors($validator);
-        }
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
@@ -80,11 +71,20 @@ class PostsController extends Controller
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
-    public function mainCategoryCreate(Request $request){
+    public function mainCategoryCreate(PostFormRequest $request){
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
-    public function subCategoryCreate(Request $request){
+    public function subCategoryCreate(PostFormRequest $request){
+
+        // $validator = Validator::make($request->all(), [
+        //     'main_category_id' => 'required|some:main_categories',
+        //     'sub_category' => 'required|string|max:100|unique:sub_categories',
+        // ]);
+        // if($validator->fails()){
+        //     return redirect()->back()
+        //     ->withErrors($validator);
+        // }
         SubCategory::create([
         'main_category_id' => $request->main_category_id,
         'sub_category' => $request->sub_category_name,
