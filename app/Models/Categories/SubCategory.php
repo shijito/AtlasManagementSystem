@@ -20,6 +20,7 @@ class SubCategory extends Model
     }
 
     public function posts(){
-        return $this->belongsToMany('App\Models\Posts', 'sub_categories', 'sub_category_id', 'post_id');// リレーションの定義
+        return $this->belongsToMany('App\Models\Posts');// リレーションの定義 , 'post_sub_categories', 'sub_category_id', 'post_id'
     }
 }
+

@@ -20,7 +20,11 @@ class UsersController extends Controller
         $updown = $request->updown;
         $gender = $request->sex;
         $role = $request->role;
-        $subjects = $request->subjects;// ここで検索時の科目を受け取る
+        $subjects = Subjects::where('subject','国語')
+                    ->orWhere('subject','数学')
+                    ->orWhere('subject','英語')
+                    ->get();
+        // $request->subjects ここで検索時の科目を受け取る
         $userFactory = new SearchResultFactories();
         $users = $userFactory->initializeUsers($keyword, $category, $updown, $gender, $role, $subjects);
         $subjects = Subjects::all();

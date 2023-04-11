@@ -19,6 +19,7 @@ class PostsController extends Controller
     public function show(Request $request){
         $posts = Post::with('user', 'postComments')->get();
         $categories = MainCategory::get();
+        $sub_categories = SubCategory::get();//postsbladeの40行目あたり
         $like = new Like;
         $post_comment = new Post;
         if(!empty($request->keyword)){
@@ -36,7 +37,7 @@ class PostsController extends Controller
             $posts = Post::with('user', 'postComments')
             ->where('user_id', Auth::id())->get();
         }
-        return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'like', 'post_comment'));
+        return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'sub_categories', 'like', 'post_comment'));//sub_categories、postsbladeの40行目あたり
     }
 
     public function postDetail($post_id){
@@ -56,6 +57,7 @@ class PostsController extends Controller
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
+        
         return redirect()->route('post.show');
     }
 
