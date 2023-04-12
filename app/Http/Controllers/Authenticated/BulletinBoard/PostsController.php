@@ -11,7 +11,9 @@ use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
-// use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\MainCategoryFormRequest;
+use App\Http\Controllers\SubCategoryFormRequest;
+
 use Auth;
 
 class PostsController extends Controller
@@ -73,11 +75,11 @@ class PostsController extends Controller
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
-    public function mainCategoryCreate(PostFormRequest $request){
+    public function mainCategoryCreate(MainCategoryFormRequest $request){
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
-    public function subCategoryCreate(PostFormRequest $request){
+    public function subCategoryCreate(SubCategoryFormRequest $request){
 
         // $validator = Validator::make($request->all(), [
         //     'main_category_id' => 'required|some:main_categories',
