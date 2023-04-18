@@ -75,23 +75,15 @@ class PostsController extends Controller
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
+    
     public function mainCategoryCreate(MainCategoryFormRequest $request){
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
     public function subCategoryCreate(SubCategoryFormRequest $request){
-
-        // $validator = Validator::make($request->all(), [
-        //     'main_category_id' => 'required|some:main_categories',
-        //     'sub_category' => 'required|string|max:100|unique:sub_categories',
-        // ]);
-        // if($validator->fails()){
-        //     return redirect()->back()
-        //     ->withErrors($validator);
-        // }
         SubCategory::create([
-        'main_category_id' => $request->main_category_id,
-        'sub_category' => $request->sub_category_name,
+            'main_category_id' => $request->main_category_id,
+            'sub_category' => $request->sub_category_name,
         ]);
         return redirect()->route('post.input');
     }

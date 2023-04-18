@@ -10,7 +10,7 @@
           <optgroup label="{{ $main_category->main_category }}"></optgroup>
             @foreach($sub_categories as $sub_category)
               @if($main_category->id == $sub_category->main_category_id)
-                <option>{{ $sub_category->sub_category }}</option>
+                <option value="{{ $sub_category->id }}">{{ $sub_category->sub_category }}</option>
               @endif
             @endforeach
         @endforeach
