@@ -54,13 +54,16 @@ class PostsController extends Controller
         return view('authenticated.bulletinboard.post_create', compact('main_categories' , 'sub_categories'));//sub_categories試し追記
     }
 
-    public function postCreate(PostFormRequest $request){
+    public function postCreate(PostFormRequest $request){    
         $post = Post::create([
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
-        
+
+        $post_id = Post::findOrFail($post->id);
+        $post_category_id = $request->post_category_id;
+        $post_id->sub_categories()->attach($post_category_id);
         return redirect()->route('post.show');
     }
 
