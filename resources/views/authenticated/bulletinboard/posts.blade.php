@@ -9,7 +9,7 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
       @foreach($post->subcategories as $subcategory)
-        <p><span>{{ $subcategory->subcategory }}</span></p>
+          <p>{{ $subcategory->sub_category }}</p>
       @endforeach
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
