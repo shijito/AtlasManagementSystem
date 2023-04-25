@@ -63,7 +63,7 @@ class PostsController extends Controller
 
         $post_id = Post::findOrFail($post->id);
         $post_category_id = $request->post_category_id;
-        $post_id->sub_categories()->attach($post_category_id);
+        $post_id->subcategories()->attach($post_category_id);
         return redirect()->route('post.show');
     }
 
