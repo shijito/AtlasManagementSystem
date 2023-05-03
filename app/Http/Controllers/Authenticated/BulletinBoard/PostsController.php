@@ -14,6 +14,7 @@ use App\Http\Requests\BulletinBoard\PostFormRequest;
 use App\Http\Requests\MainCategoryFormRequest;
 use App\Http\Requests\SubCategoryFormRequest;
 use App\Http\Requests\PostEditRequest;
+use App\Http\Requests\PostCommentRequest;
 
 use Auth;
 
@@ -98,7 +99,7 @@ class PostsController extends Controller
     }
 
 
-    public function commentCreate(Request $request){
+    public function commentCreate(PostCommentRequest $request){
         PostComment::create([
             'post_id' => $request->post_id,
             'user_id' => Auth::id(),
