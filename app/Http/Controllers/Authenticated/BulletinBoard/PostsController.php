@@ -39,6 +39,11 @@ class PostsController extends Controller
         }else if($request->my_posts){
             $posts = Post::with('user', 'postComments')
             ->where('user_id', Auth::id())->get();
+        }else if($request->category_posts){
+            $subcategory_posts = $request->category_posts;
+            $posts = Post::whereHas('subcategories', function ($q) use ($subcategory_posts){
+                $q->where('sub_category', '=', $subcategory_posts);
+            })->get();
         }
         return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'sub_categories', 'like', 'post_comment'));//sub_categories、postsbladeの40行目あたり
     }
@@ -140,6 +145,7 @@ class PostsController extends Controller
 
         return response()->json();
     }
+
 
 
 }

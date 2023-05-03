@@ -9,7 +9,7 @@
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
       @foreach($post->subcategories as $subcategory)
-          <p>{{ $subcategory->sub_category }}</p>
+          <input type="submit" name="sub_category" class="category_btn" value="{{ $subcategory->sub_category }}" >
       @endforeach
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
@@ -42,7 +42,7 @@
         <li class="main_categories" category_id="{{ $category->id }}">{{ $category->main_category }}</li>
             @foreach($sub_categories as $sub_category)
               @if($category->id == $sub_category->main_category_id)
-                <input type="submit" name="sub_category" class="category_btn" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+              <input type="submit" name="category_posts" class="category_btn" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
               @endif
             @endforeach
         @endforeach
@@ -50,5 +50,6 @@
     </div>
   </div>
   <form action="{{ route('post.show') }}" method="get" id="postSearchRequest"></form>
+  
 </div>
 @endsection
