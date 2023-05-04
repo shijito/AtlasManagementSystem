@@ -26,6 +26,8 @@ class PostsController extends Controller
         $sub_categories = SubCategory::get();//postsbladeの40行目あたり
         $like = new Like;
         $post_comment = new Post;
+        $post_counts = Post::withCount('postComments')->get();
+        // dd($post_counts);
         if(!empty($request->keyword)){
             $posts = Post::with('user', 'postComments')
             ->where('post_title', 'like', '%'.$request->keyword.'%')
@@ -46,7 +48,7 @@ class PostsController extends Controller
                 $q->where('sub_category', '=', $subcategory_posts);
             })->get();
         }
-        return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'sub_categories', 'like', 'post_comment'));//sub_categories、postsbladeの40行目あたり
+        return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'sub_categories', 'like', 'post_comment','post_counts' ));//sub_categories、postsbladeの40行目あたり
     }
 
     public function postDetail($post_id){
@@ -146,6 +148,7 @@ class PostsController extends Controller
 
         return response()->json();
     }
+
 
 
 

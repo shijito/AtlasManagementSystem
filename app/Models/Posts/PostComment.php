@@ -3,6 +3,7 @@
 namespace App\Models\Posts;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Users\User;
 
@@ -24,4 +25,7 @@ class PostComment extends Model
     public function commentUser($user_id){
         return User::where('id', $user_id)->first();
     }
+    
+
+
 }
