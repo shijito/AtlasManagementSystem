@@ -49,7 +49,7 @@ li{
 .calendar-td{
   min-width:100px;
 }
-.calendar-td-a{
+.calendar-td-a{ /* 仮追記 */
   background:#EEE;
 }
 .day_part{

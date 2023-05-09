@@ -47,7 +47,7 @@ class CalendarWeekDay{
      }else{
        $three_part_frame = '0';
      }
-
+     
      $html = [];
      $html[] = '<select name="getPart[]" class="border-primary" style="width:70px; border-radius:5px;" form="reserveParts">';
      $html[] = '<option value="" selected></option>';
