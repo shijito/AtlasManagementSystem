@@ -35,4 +35,14 @@ class CalendarsController extends Controller
         }
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
+
+    public function deleteParts(){
+        $user = User::with('reserveSettings')
+        ->where('id', Auth::id())->first();
+        // dd($user);
+        return view('authenticated.calendar.general.calendar', compact('user'));
+    }
+
+
+    
 }
