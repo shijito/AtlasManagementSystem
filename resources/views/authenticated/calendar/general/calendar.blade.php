@@ -22,10 +22,11 @@
     <form action="{{ route('deleteParts') }}" method="post">
       <div class="w-100">
         <div class="modal-setting-resreve">
-          <p>予約日：<input type="text" name="setting_resreve" ></p>
+          <p>予約日：<input type="text" name="setting_resreve" disabled></p>
         </div>
         <div class="modal-setting-part">
-          <p>時間：<input type="text" name="setting_part" ></p>
+          <p>時間：<input type="text"  name="setting_part" disabled></p>
+          <!-- <p class=""></p> -->
         </div>
         <div> 
           <p>上記の予約をキャンセルしてもよろしいですか？</p>

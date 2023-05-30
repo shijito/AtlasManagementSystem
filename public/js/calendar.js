@@ -7,6 +7,7 @@ $(function(){
         var setting_id = $(this).attr('setting_id');
         $('.modal-setting-resreve input').val(setting_resreve);
         $('.modal-setting-part input').val(setting_part);
+        // $('.modal-setting-part date-on').val(setting_part);
         $('.delete-modal-hidden').val(setting_id);
         return false;
       });
