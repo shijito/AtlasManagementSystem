@@ -8,14 +8,17 @@
           <div>
           </div>
           <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
+            <span class="edit-modal-open btn btn-primary" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
+            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')" class="btn btn-danger">削除</a>
           </div>
         </div>
+        @if($errors->first('comment'))
+          <span class="error_message">{{ $errors->first('comment') }}</span>
+        @endif
         <div class="contributor d-flex">
-          @if($errors->first('post_title'))
-          <span class="error_message">{{ $errors->first('post_title') }}</span>
-          @endif           
+          @foreach($post->subcategories as $subcategory)
+            <input type="submit" name="sub_category" class="category_btn" value="{{ $subcategory->sub_category }}" >
+          @endforeach          
         </div>
         <div class="contributor d-flex"> 
          <p>
@@ -46,11 +49,16 @@
   </div>
   <div class="w-50 p-3">
     <div class="comment_container border m-5">
+      @if($errors->first('comment'))
+      <span class="error_message">{{ $errors->first('comment') }}</span>
+      @endif
       <div class="comment_area p-3">
         <p class="m-0">コメントする</p>
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        <div style="text-align: right;">
+        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿" >
+        </div>
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>
     </div>

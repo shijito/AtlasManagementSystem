@@ -31,7 +31,9 @@ class SubCategoryFormRequest extends FormRequest
 
     public function messages(){
         return [
-   
+            'sub_category_name.required' => 'サブカテゴリーは必ず入力してください。',
+            'sub_category_name.unique' => '登録されているメインカテゴリーは登録できません。',
+            'sub_category_name.max' => '100文字以内で入力してください。',
         ];
     }
 }

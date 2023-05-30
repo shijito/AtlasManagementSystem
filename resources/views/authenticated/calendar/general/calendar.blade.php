@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="vh-100 pt-5" style="background:#ECF1F6;">
-  <div class="border w-75 m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
+  <div class="border w-75 m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF; box-shadow:2px 2px 4px gray;">
     <div class="w-75 m-auto border" style="border-radius:5px;">
 
       <p class="text-center">{{ $calendar->getTitle() }}</p>
@@ -26,7 +26,6 @@
         </div>
         <div class="modal-setting-part">
           <p>時間：<input type="text"  name="setting_part" disabled></p>
-          <!-- <p class=""></p> -->
         </div>
         <div> 
           <p>上記の予約をキャンセルしてもよろしいですか？</p>

@@ -19,6 +19,9 @@
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
+              @if($errors->first('post_title'))
+              <span class="error_message">{{ $errors->first('over_name') }}</span>
+              @endif
               <label class="d-block m-0" style="font-size:13px">姓</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">

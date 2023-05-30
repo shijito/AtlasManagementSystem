@@ -15,7 +15,7 @@ li{
 
 /* サイドバー */
 .sidebar{
-  width:150px;
+  width:200px;
   height:100vh;
   background-color:#03AAD2;
   font-weight:bold;
@@ -26,11 +26,23 @@ li{
 .sidebar p a{
   color:#FFF;
 }
+.sidebar p img{
+  background-color:#03AAD2;
+  padding-right: 5px;
+}
+
+/* ログイン画面 */
+.atlas-black{
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
 
 /* トップページ */
 .user_status{
   border-radius:10px;
   background:#FFF;
+  border: none;
 }
 
 /* スクール予約関連 */
@@ -91,6 +103,17 @@ li{
     top: 50%;
     transform: translate(-50%,-50%);
     width: 60%;
+}
+/* 予約キャンセルモーダル */
+.modal-setting-resreve input{
+  background:#FFF; 
+  border: none;
+  color: black;
+}
+.modal-setting-part input{
+  background:#FFF; 
+  border: none;
+  color: black;
 }
 
 /* 掲示板 */
@@ -160,6 +183,9 @@ li{
 .comment_container{
   background:#FFF;
 }
+.contributor{
+  font-size:12px;
+}
 .comment_area p,
 .comment_area input{
   font-size:12px;
@@ -193,20 +219,21 @@ li{
   border-radius:5px;
   padding:0 5px;
   border:none;
-  background:#999;
+  background:#1e90ff;
   color:#FFF;
 }
 .main_categories span,
 .sub_categories li input{
   list-style:none;
   cursor:pointer;
+  display: flex;
 }
 
 /* ユーザー検索 */
 .reserve_users_area{
   display:flex;
   flex-wrap:wrap;
-  width:800px;
+  width:1150px;
   margin:10px auto;
   height:80vh;
   overflow: scroll;
@@ -217,9 +244,15 @@ li{
 .reserve_users_area span{
   font-size:12px;
 }
+.reserve_users_area div{
+  padding-top: 7px;
+}
 .one_person{
   width:250px;
   height:250px;
+  margin: 10px;
+  box-shadow: 2px 2px 4px gray;
+  border-radius: 10px;
 }
 .search_conditions span{
   cursor:pointer;
@@ -235,4 +268,22 @@ li{
 }
 .subject_inner{
   display:none;
+}
+/* 予約詳細確認画面 */
+.reserve-detail{
+  width: 98%;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+}
+.reserve-detail tr th{
+  color: white;
+  background-color: #078cb4;
+}
+.w-15{
+  width: 10%;
+}
+.reserve-detail tr:nth-of-type(odd) {
+  background-color: #ccf5ff;
 }

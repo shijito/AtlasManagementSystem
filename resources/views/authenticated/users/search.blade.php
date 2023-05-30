@@ -56,6 +56,7 @@
   </div>
   <div class="search_area w-25 border">
     <div class="">
+      <p>検索</p>
       <div>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
