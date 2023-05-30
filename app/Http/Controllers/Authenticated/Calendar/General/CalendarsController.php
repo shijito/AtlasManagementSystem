@@ -36,12 +36,18 @@ class CalendarsController extends Controller
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
 
-    // public function deleteParts(){
-    //     $user = User::with('reserveSettings')
-    //     ->where('id', Auth::id())->first();
-    //     // dd($user);
-    //     return view('authenticated.calendar.general.calendar', compact('user'));
-    // }
+    public function delete(Request $request){
+        $setting_id = $request->setting_id;
+        // dd($setting_id);
+        $reservesettings = ReserveSettings::whereHas('users', function ($q) use ($setting_id){
+        $q->where('reserve_setting_id', '=', $setting_id);
+        })->first();
+        // dd($reservesettings);
+        $reservesettings->increment('limit_users');
+        $reservesettings->users()->detach(Auth::id());
+
+        return redirect()->route('calendar.general.show' , ['user_id' => Auth::id()]);
+    }
 
 
     

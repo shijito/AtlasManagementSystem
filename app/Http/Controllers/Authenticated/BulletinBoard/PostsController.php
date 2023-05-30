@@ -47,6 +47,7 @@ class PostsController extends Controller
             $posts = Post::whereHas('subcategories', function ($q) use ($subcategory_posts){
                 $q->where('sub_category', '=', $subcategory_posts);
             })->get();
+            // dd($posts);
         }
         return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'sub_categories', 'like', 'post_comment','post_counts' ));//sub_categories、postsbladeの40行目あたり
     }
