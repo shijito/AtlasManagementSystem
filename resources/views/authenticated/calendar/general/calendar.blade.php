@@ -27,7 +27,7 @@
         <div class="modal-setting-part">
           <p>時間：<input type="text"  name="setting_part" disabled></p>
         </div>
-        <div> 
+        <div class="modal-setting-lan"> 
           <p>上記の予約をキャンセルしてもよろしいですか？</p>
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
