@@ -50,21 +50,29 @@ class RegisterRequest extends FormRequest
                 'sex' => 'required|in:1,2,3',
                 'birth_day_validation' => 'required|date',
                 'role' => 'required|in:1,2,3,4',
-                'password' => 'required|string|between:8,30|confirmed',
+                'password' => 'required|string|between:8,30',
         ];
     }
 
     public function messages(){
         return [
-            'over_name' => '※苗字を10文字以内で入力してください。',
-            'under_name' => '※名前を10文字以内で入力してください。',
-            'over_name_kana' => '※苗字のカナを30文字以内で入力してください。',
-            'under_name_kana' => '※名前のカナを30文字以内で入力してください。',
-            'mail_address' => '※アドレスを100文字以内で入力してください。',
-            'sex' => '※性別を選択してください。',
-            'birth_day_validation' => '※生年月日を選択してください。',
-            'role' => '※役職を選択してください。',
-            'password' => '※パスワードを8～30文字以内で入力してください。',
+            'over_name.required' => '※苗字は必ず入力してください。',
+            'over_name.max' => '※苗字を10文字以内で入力してください。',
+            'under_name.required' => '※名前は必ず入力してください。',
+            'under_name.max' => '※名前を10文字以内で入力してください。',
+            'over_name_kana.required' => '※苗字のカナは必ず入力してください。',
+            'over_name_kana.max' => '※苗字のカナを30文字以内で入力してください。',
+            'under_name_kana.required' => '※名前のカナは必ず入力してください。',
+            'under_name_kana.max' => '※名前のカナを30文字以内で入力してください。',
+            'mail_address.required' => '※アドレスは必ず入力してください。',
+            'mail_address.max' => '※アドレスを100文字以内で入力してください。',
+            'mail_address.unique' => '※すでに登録されているアドレスは登録できません。',
+            'sex.required' => '※性別は必ず選択してください。',
+            'birth_day_validation.required' => '※生年月日は必ず選択してください。',
+            'role.required' => '※役職は必ず選択してください。',
+            'password.required' => '※パスワードは必ず入力してください。',
+            'password.confirmed' => '※パスワードが一致していません。',
+            'password.between' => '※パスワードを8～30文字以内で入力してください。',
 
         ];
     }
