@@ -33,14 +33,14 @@ class CalendarWeekDay{
     // dd($part_counts);
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="{{ calendar.admin.detail }}">1部</a> '.$one_part->users->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'.$ymd.'/1">1部</a> '.$one_part->users->count().'</p>';
       // dd($one_parts);
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="{{ calendar.admin.detail }}">2部</a> '.$two_part->users->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'.$ymd.'/2">2部</a> '.$two_part->users->count().'</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="{{ calendar.admin.detail }}">3部</a> '.$three_part->users->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'.$ymd.'/3">3部</a> '.$three_part->users->count().'</p>';
     }
     $html[] = '</div>';
 
