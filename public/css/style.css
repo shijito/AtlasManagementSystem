@@ -359,19 +359,6 @@ input[name="my_posts"]{
   padding-top: 20px;
   margin-left: 120px;
 }
-/* .arrow {矢印
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-top: 5px solid #666;
-  border-right: 5px solid #666;
-  transform: rotate(-45deg);
-  transition: all 0.3s;
-}
-
-.arrow {矢印
-  transform: rotate(135deg);
-} */
 
 /* 予約詳細確認画面 */
 .reserve-detail{
@@ -390,4 +377,18 @@ input[name="my_posts"]{
 }
 .reserve-detail tr:nth-of-type(odd) {
   background-color: #ccf5ff;
+}
+/* プロフィール矢印 */
+.arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid #666;
+  border-right: 5px solid #666;
+  transform: rotate(-45deg);
+  transition: all 0.3s;
+}
+
+.arrow {
+  transform: rotate(135deg);
 }
