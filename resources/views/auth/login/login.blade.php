@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="atlas-black">
-    <img src="images/atlas-black.png" >
+    <img src="{{ asset('images/atlas-black.png') }}" >
   </div>
   <form action="{{ route('loginPost') }}" method="POST">
     <div class="w-100 vh-50 d-flex" style="align-items:center; justify-content:center;">

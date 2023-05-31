@@ -25,15 +25,19 @@ class RegisterRequest extends FormRequest
     public function getValidatorInstance()
     {
         // プルダウンで選択された値(= 配列)を取得
-        $birth_day = $this->input('birth_day', array()); //デフォルト値は空の配列
+        // $birth_day = $this->input('birth_day', array()); //デフォルト値は空の配列
+        $old_year = $this->input('old_year', array()); //年を取得
+        $old_month = $this->input('old_month', array()); //月を取得
+        $old_day = $this->input('old_day', array()); //日を取得
 
         // 日付を作成(ex. 2020-1-20)
-        $birth_day_validation = implode('-', $birth_day);
-
+        // $birth_day_validation = implode('-', $birth_day);
+        $data = $old_year . '-' . $old_month . '-' . $old_day;
+        $birth_day = date('Y-m-d', strtotime($data));
         // rules()に渡す値を追加でセット
         //     これで、この場で作った変数にもバリデーションを設定できるようになる
         $this->merge([
-            'birth_day_validation' => $birth_day_validation,
+            'birth_day' => $birth_day,
         ]);
 
         return parent::getValidatorInstance();
@@ -44,14 +48,15 @@ class RegisterRequest extends FormRequest
         return [
                 'over_name' => 'required|string|max:10',
                 'under_name' => 'required|string|max:10',
-                'over_name_kana' => 'required|string|max:30',///^[ァ-ン]+*$/u
-                'under_name_kana' => 'required|string|max:30',///^[ァ-ン]+*$/u
+                'over_name_kana' => 'required|string|max:30|regex:/\A[ァ-ヴー]+\z/u',///^[ァ-ン]+*$/u
+                'under_name_kana' => 'required|string|max:30|regex:/\A[ァ-ヴー]+\z/u',///^[ァ-ン]+*$/u
                 'mail_address' => 'required|string|email|unique:users|max:100',
                 'sex' => 'required|in:1,2,3',
-                'birth_day_validation' => 'required|date',
+                'birth_day' => 'required|date|after_or_equal:2000-1-1',
                 'role' => 'required|in:1,2,3,4',
-                'password' => 'required|string|between:8,30',
-        ];
+                'password' => 'required|string|between:8,30|confirmed',
+                'password_confirmation' => 'required',
+        ];      
     }
 
     public function messages(){
@@ -62,17 +67,21 @@ class RegisterRequest extends FormRequest
             'under_name.max' => '※名前を10文字以内で入力してください。',
             'over_name_kana.required' => '※苗字のカナは必ず入力してください。',
             'over_name_kana.max' => '※苗字のカナを30文字以内で入力してください。',
+            'over_name_kana.regex' => '※全角カナで入力してください。',
             'under_name_kana.required' => '※名前のカナは必ず入力してください。',
             'under_name_kana.max' => '※名前のカナを30文字以内で入力してください。',
+            'under_name_kana.regex' => '※全角カナで入力してください。',
             'mail_address.required' => '※アドレスは必ず入力してください。',
             'mail_address.max' => '※アドレスを100文字以内で入力してください。',
             'mail_address.unique' => '※すでに登録されているアドレスは登録できません。',
             'sex.required' => '※性別は必ず選択してください。',
-            'birth_day_validation.required' => '※生年月日は必ず選択してください。',
+            'birth_day.required' => '※生年月日は必ず選択してください。',
+            'birth_day.after_or_equal' => '※生年月日は2000年1月1日移行を登録してください。',
             'role.required' => '※役職は必ず選択してください。',
             'password.required' => '※パスワードは必ず入力してください。',
-            'password.confirmed' => '※パスワードが一致していません。',
             'password.between' => '※パスワードを8～30文字以内で入力してください。',
+            'password.confirmed' => '※パスワードが一致していません。',
+            'password_confirmation.required' => '※確認パスワード必ず入力してください。'
 
         ];
     }
