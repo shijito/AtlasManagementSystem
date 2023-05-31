@@ -16,7 +16,7 @@
       </div>
       <div class="">
         @can('admin')
-        <p class="subject_edit_btn"><span>選択科目の編集</span><a class="arrow"></a></p>
+        <p class="subject_edit_btn"><span>選択科目の編集</span>　<a class="arrow"></a></p>
         <div class="subject_inner">
           <form action="{{ route('user.edit') }}" method="post">
             @foreach($subject_lists as $subject_list)

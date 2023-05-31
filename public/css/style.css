@@ -38,6 +38,39 @@ li{
   padding-bottom: 100px;
 }
 
+/* 新規登録画面 */
+.over_name_block,
+.over_name_kana_block,
+.mail_address_block,
+.birth_day_block{
+  margin-left: 20px;
+}
+.under_name_block,
+.under_name_kana_block{
+  margin-right: 60px;
+}
+.sex_block input[type="radio"]{
+  margin-left: 15%;
+}
+.role_block input[type="radio"]{
+  margin-left: 5%;
+}
+.old_year,
+.old_month,
+.old_day{
+  width: 105px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.subject-checkbox{
+  display: flex;
+}
+.checkbox-block{
+  margin-left: 15%;
+}
+
+
 /* トップページ */
 .user_status{
   border-radius:10px;
@@ -380,15 +413,16 @@ input[name="my_posts"]{
 }
 /* プロフィール矢印 */
 .arrow {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-top: 5px solid #666;
-  border-right: 5px solid #666;
-  transform: rotate(-45deg);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(135deg);
   transition: all 0.3s;
+  border-color: #0000FF;
 }
 
-.arrow {
-  transform: rotate(135deg);
+.arrow.rotate {
+  transform: rotate(-45deg);
 }
