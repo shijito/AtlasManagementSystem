@@ -16,18 +16,18 @@
       </div>
       <div class="">
         @can('admin')
-        <p class="subject_edit_btn"><span>選択科目の編集</span>　<a class="arrow"></a></p>
+        <p class="subject_edit_btn"><span>選択科目の登録</span>　<a class="arrow"></a></p>
         <div class="subject_inner">
           <form action="{{ route('user.edit') }}" method="post">
             <div class="subject-checkbox">
               @foreach($subject_lists as $subject_list)
               <div class="profile-checkbox">
-                <label>{{ $subject_list->subject }}</label>
+                <label class="mt-2">{{ $subject_list->subject }}</label>
                 <input type="checkbox" name="subjects[]" value="{{ $subject_list->id }}">
               </div>
               @endforeach
               <div>
-                <input type="submit" value="編集" class="btn btn-primary">
+                <input type="submit" value="編集" class="btn btn-primary ">
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
               </div>
             </div>

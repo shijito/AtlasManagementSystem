@@ -56,14 +56,14 @@
   </div>
   <div class="search_area w-25 border">
     <div class="user-search">
-      <p>検索</p>
+      <p class="mt-5" style="font-size:20px;">検索</p>
       <div>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
       <div>
         <lavel>カテゴリ</lavel>
         <div class="search-category">
-          <select form="userSearchRequest" name="category">
+          <select form="userSearchRequest" name="category" class="mt-1 mb-2">
             <option value="name">名前</option>
             <option value="id">社員ID</option>
           </select>
@@ -72,7 +72,7 @@
       <div>
         <label>並び替え</label>
         <div class="search-sort">
-          <select name="updown" form="userSearchRequest">
+          <select name="updown" form="userSearchRequest" >
             <option value="ASC">昇順</option>
             <option value="DESC">降順</option>
           </select>
