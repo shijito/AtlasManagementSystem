@@ -14,4 +14,11 @@ $(function () {
     $('.arrow').toggleClass("rotate");
   });
 
-});
+  // $('.post_category_list').on('click',function() {
+  // $(this).toggleClass('selected');
+  // $(this).next().slideToggle();
+  // $('.post_category_list').not($(this)).next().slideUp();
+  // $('.post_category_list').not($(this)).removeClass('selected');
+  // $('.arrow').toggleClass("rotate");
+  // });
+})

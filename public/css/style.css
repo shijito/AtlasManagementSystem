@@ -12,7 +12,6 @@ ul,
 li{
   list-style:none;
 }
-
 /* サイドバー */
 .sidebar{
   width:200px;
@@ -29,6 +28,7 @@ li{
 .sidebar p img{
   background-color:#03AAD2;
   padding-right: 5px;
+  margin-left: 10px;
 }
 
 /* ログイン画面 */
