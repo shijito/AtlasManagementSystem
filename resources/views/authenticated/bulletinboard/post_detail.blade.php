@@ -4,38 +4,41 @@
   <div class="w-50 mt-5">
     <div class="m-3 detail_container" style="border-radius:10px; box-shadow:2px 2px 4px gray;">
       <div class="p-3">
-        <div class="detail_inner_head">
-          <div>
+        <div class="detail_inner_head"> 
+          @if($errors->first('comment'))
+            <span class="error_message">{{ $errors->first('comment') }}</span>
+          @endif
+          <div class="contributor d-flex ml-3">
+            @foreach($post->subcategories as $subcategory)
+              <input type="submit" name="sub_category" class="category_btn" value="{{ $subcategory->sub_category }}" >
+            @endforeach          
           </div>
           <div>
             <span class="edit-modal-open btn btn-primary" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')" class="btn btn-danger">削除</a>
+            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')" class="btn btn-danger mr-3">削除</a>
           </div>
         </div>
-        @if($errors->first('comment'))
-          <span class="error_message">{{ $errors->first('comment') }}</span>
-        @endif
-        <div class="contributor d-flex">
+        <!-- <div class="contributor d-flex">
           @foreach($post->subcategories as $subcategory)
             <input type="submit" name="sub_category" class="category_btn" value="{{ $subcategory->sub_category }}" >
           @endforeach          
-        </div>
+        </div> -->
         <div class="contributor d-flex"> 
-         <p>
-            <span>{{ $post->user->over_name }}</span>
+         <p class="mt-3" style="font-size:15px;">
+            <span class="ml-3">{{ $post->user->over_name }}</span>
             <span>{{ $post->user->under_name }}</span>
             さん
           </p>
           <span class="ml-5">{{ $post->created_at }}</span>
         </div>
-        <div class="detsail_post_title">{{ $post->post_title }}</div>
-        <div class="mt-3 detsail_post">{{ $post->post }}</div>
+        <div class="detsail_post_title ml-3" style="font-size:15px;">{{ $post->post_title }}</div>
+        <div class="mt-3 ml-3 detsail_post" style="font-size:15px;">{{ $post->post }}</div>
       </div>
       <div class="p-3">
         <div class="comment_container">
-          <span class="">コメント</span>
+          <span class="ml-3">コメント</span>
           @foreach($post->postComments as $comment)
-          <div class="comment_area border-top">
+          <div class="comment_area border-top ml-3 mt-2">
             <p>
               <span>{{ $comment->commentUser($comment->user_id)->over_name }}</span>
               <span>{{ $comment->commentUser($comment->user_id)->under_name }}</span>さん
@@ -48,7 +51,7 @@
     </div>
   </div>
   <div class="w-50 p-3">
-    <div class="comment_container border m-5">
+    <div class="comment_container border m-5" style="border-radius:10px;">
       @if($errors->first('comment'))
       <span class="error_message">{{ $errors->first('comment') }}</span>
       @endif
@@ -57,7 +60,7 @@
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
         <div style="text-align: right;">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿" >
+        <input type="submit" class="btn btn-primary mt-2" form="commentRequest" value="投稿" >
         </div>
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>

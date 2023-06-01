@@ -256,6 +256,10 @@ input[name="my_posts"]{
   display:flex;
   justify-content: space-between;
 }
+.contributor input[type="submit"]{
+  height: 20px;
+  margin-top: 20px;
+}
 .edit-modal-open{
   cursor:pointer;
 }
