@@ -212,14 +212,16 @@ li{
 }
 .search-word input[type="text"]{
   width: 70%;
+  border-color: rgb(161, 161, 161);
+  border-width: 1px;
   border-radius: 10px 0 0 10px;
-  border: #bebaba;
+  background-color: #ECF1F6;
 }
 .search-word input[type="submit"]{
   width: 30%;
   border-radius: 0 7px 7px 0;
   background-color: #3d70fc;
-  border: #a39d9d;
+  border: none;
 }
 input[name="like_posts"],
 input[name="my_posts"]{
@@ -292,9 +294,7 @@ input[name="my_posts"]{
 .post_status span{
   font-size:12px;
 }
-.edit-btns{
-  
-}
+
 
 /* 掲示板　カテゴリー */
 .category_area{
@@ -315,6 +315,18 @@ input[name="my_posts"]{
   border:none;
   background:#1e90ff;
   color:#FFF;
+}
+.subcategory_btn{
+  margin-top: 20px;
+  margin-left: 13px;
+  width: 250px;
+  font-size: 13px;
+  text-align: left;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid gray 1px;
+  background-color: #ECF1F6;
 }
 .main_categories span,
 .sub_categories li input{
@@ -471,4 +483,5 @@ input[name="my_posts"]{
 .post_category_list{
   border-bottom: solid gray 1px;
   width: 300px;
+  margin-top: 20px;
 }
