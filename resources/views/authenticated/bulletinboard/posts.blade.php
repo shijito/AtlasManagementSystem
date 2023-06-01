@@ -3,7 +3,7 @@
 @section('content')
 <div class="board_area w-100 border m-auto d-flex">
   <div class="post_view w-75 mt-5">
-    <p class="w-75 m-auto">投稿一覧</p>
+    <!-- <p class="w-75 m-auto">投稿一覧</p> -->
     @foreach($posts as $post)
     <div class="post_area border w-75 m-auto p-3">
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
@@ -36,7 +36,7 @@
     </div>
     @endforeach
   </div>
-  <div class="other_area border w-25">
+  <div class="other_area w-25">
     <div class="h-100 m-4">
       <div class="btn btn-primary w-100 mt-5" style="border-radius: 10px;"><a href="{{ route('post.input') }}">投稿</a></div>
       <div class="search-word mt-2">
