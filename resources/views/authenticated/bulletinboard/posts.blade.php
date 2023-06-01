@@ -7,7 +7,7 @@
     @foreach($posts as $post)
     <div class="post_area border w-75 m-auto p-3">
       <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん</p>
-      <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p> 
+      <p><a href="{{ route('post.detail', ['id' => $post->id]) }}" style="color: #000; font-weight: bold;">{{ $post->post_title }}</a></p> 
       <div class="d-flex">
         @foreach($post->subcategories as $subcategory)
           <div class="">
@@ -38,15 +38,15 @@
   </div>
   <div class="other_area border w-25">
     <div class="h-100 m-4">
-      <div class="btn btn-primary w-100"><a href="{{ route('post.input') }}">投稿</a></div>
-      <div class="search-word">
+      <div class="btn btn-primary w-100 mt-5" style="border-radius: 10px;"><a href="{{ route('post.input') }}">投稿</a></div>
+      <div class="search-word mt-2">
         <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
         <input type="submit" value="検索" form="postSearchRequest" >
       </div>
-        <input type="submit" name="like_posts"  value="いいねした投稿" form="postSearchRequest">
+        <input type="submit" name="like_posts"  value="いいねした投稿" form="postSearchRequest" class="mt-3">
         <input type="submit" name="my_posts"  value="自分の投稿" form="postSearchRequest">
       <div>
-        <p>カテゴリー検索</p>
+        <p class="mt-4">カテゴリー検索</p>
         <ul>
           @foreach($categories as $category)
             <li class="main_categories post_category_list" category_id="{{ $category->id }}">

@@ -52,13 +52,17 @@ li{
 .sex_block input[type="radio"]{
   margin-left: 15%;
 }
-.role_block input[type="radio"]{
-  margin-left: 5%;
+.sex_block label{
+  margin-left: 5px;
+}
+.role_block label{
+  margin-left: 3px;
+  margin-right: 30px;
 }
 .old_year,
 .old_month,
 .old_day{
-  width: 105px;
+  width: 110px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -208,8 +212,8 @@ li{
 }
 .search-word input[type="text"]{
   width: 70%;
-  border-radius: 7px 0 0 7px;
-  border: #a39d9d;
+  border-radius: 10px 0 0 10px;
+  border: #bebaba;
 }
 .search-word input[type="submit"]{
   width: 30%;
@@ -230,6 +234,9 @@ input[name="like_posts"]{
 input[name="my_posts"]{
   background-color: #ffa500;
   border: none;
+}
+.post_status span{
+  margin-left: 3px;
 }
 
 /* 掲示板 詳細画面 */
@@ -280,6 +287,9 @@ input[name="my_posts"]{
 }
 .post_status span{
   font-size:12px;
+}
+.edit-btns{
+  
 }
 
 /* 掲示板　カテゴリー */

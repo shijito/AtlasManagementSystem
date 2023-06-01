@@ -45,7 +45,7 @@
       <div class="">
         <p class="m-0">メインカテゴリー</p>
         <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
-        <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
+        <input type="submit" value="追加" class="w-100 btn btn-primary p-0 mt-3 mb-5" form="mainCategoryRequest">
       </div>
       <!-- サブカテゴリー追加 -->
       <div class="">
@@ -59,8 +59,8 @@
         @if($errors->first('sub_category_name'))
         <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
         @endif
-        <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
-        <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
+        <input type="text" class="w-100 mt-3" name="sub_category_name" form="subCategoryRequest">
+        <input type="submit" value="追加" class="w-100 btn btn-primary p-0 mt-3" form="subCategoryRequest">
       </div>  
         <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">{{ csrf_field() }}
         </form>

@@ -12,18 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:#ECF1F6;">
   <form action="{{ route('registerPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="w-25 vh-75 border p-3" style="box-shadow:2px 2px 4px gray; border-radius:10px;">
+      <div class="w-25 vh-75 border p-3" style="box-shadow:2px 2px 4px gray; border-radius:10px; background-color:white;">
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between;">
             <div class="over_name_block" style="width:140px">
               @if($errors->first('over_name'))
               <span class="error_message">{{ $errors->first('over_name') }}</span>
               @endif
-              <label class="d-block m-0" style="font-size:13px">姓</label>
-              <div class="border-bottom border-primary" style="width:140px;">
+              <label class="d-block mt-3" style="font-size:13px">姓</label>
+              <div class="border-bottom border-primary" style="width:175px;">
                 <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
               </div>
             </div>
@@ -31,8 +31,8 @@
               @if($errors->first('under_name'))
               <span class="error_message">{{ $errors->first('under_name') }}</span>
               @endif
-              <label class=" d-block m-0" style="font-size:13px">名</label>
-              <div class="border-bottom border-primary" style="width:140px;">
+              <label class="d-block mt-3" style="font-size:13px">名</label>
+              <div class="border-bottom border-primary" style="width:175px;">
                 <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
               </div>
             </div>
@@ -43,7 +43,7 @@
               <span class="error_message">{{ $errors->first('over_name_kana') }}</span>
               @endif
               <label class="d-block m-0" style="font-size:13px">セイ</label>
-              <div class="border-bottom border-primary" style="width:140px;">
+              <div class="border-bottom border-primary" style="width:175px;">
                 <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
               </div>
             </div>
@@ -52,7 +52,7 @@
               <span class="error_message">{{ $errors->first('under_name_kana') }}</span>
               @endif
               <label class="d-block m-0" style="font-size:13px">メイ</label>
-              <div class="border-bottom border-primary" style="width:140px;">
+              <div class="border-bottom border-primary" style="width:175px;">
                 <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
               </div>
             </div>
@@ -62,7 +62,7 @@
               <span class="error_message">{{ $errors->first('mail_address') }}</span>
             @endif
             <label class="m-0 d-block" style="font-size:13px;">メールアドレス</label>
-            <div class="border-bottom border-primary" style="width:365px;">
+            <div class="border-bottom border-primary" style="width:395px;">
               <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
             </div>
           </div>
@@ -199,7 +199,7 @@
             <span class="error_message">{{ $errors->first('password') }}</span>
           @endif
           <label class="d-block m-0" style="font-size:13px">パスワード</label>
-          <div class="border-bottom border-primary" style="width:365px;">
+          <div class="border-bottom border-primary" style="width:395px;">
             <input type="password" class="border-0 w-100 password" name="password">
           </div>
         </div>
@@ -208,15 +208,15 @@
             <span class="error_message">{{ $errors->first('password_confirmation') }}</span>
           @endif
           <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
-          <div class="border-bottom border-primary" style="width:365px;">
+          <div class="border-bottom border-primary" style="width:395px;">
             <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
-        <div class="mt-5 text-right">
+        <div class="mt-3 text-right pr-4">
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
         </div>
-        <div class="text-center">
-          <a href="{{ route('loginView') }}">ログイン</a>
+        <div class="text-center mb-2">
+          <a href="{{ route('loginView') }}">ログインはこちら</a>
         </div>
       </div>
       {{ csrf_field() }}
