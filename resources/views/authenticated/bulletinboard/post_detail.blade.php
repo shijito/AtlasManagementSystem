@@ -2,7 +2,7 @@
 @section('content')
 <div class="vh-100 d-flex">
   <div class="w-50 mt-5">
-    <div class="m-3 detail_container">
+    <div class="m-3 detail_container" style="border-radius:10px; box-shadow:2px 2px 4px gray;">
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
@@ -52,7 +52,7 @@
       @if($errors->first('comment'))
       <span class="error_message">{{ $errors->first('comment') }}</span>
       @endif
-      <div class="comment_area p-3">
+      <div class="comment_area p-3" style="border-radius:10px; box-shadow:2px 2px 4px gray;">
         <p class="m-0">コメントする</p>
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">

@@ -176,6 +176,8 @@ li{
 }
 .post_bottom_area{
   justify-content: space-between;
+  margin-right: 0;
+  margin-left: auto;
 }
 .like_btn,
 .un_like_btn{
@@ -332,6 +334,10 @@ input[name="my_posts"]{
   box-shadow: 2px 2px 4px gray;
   border-radius: 10px;
 }
+.search_conditions{
+  border-bottom: solid gray 1px;
+  width: 300px;
+}
 .search_conditions span{
   cursor:pointer;
 }
@@ -397,6 +403,7 @@ input[name="my_posts"]{
   padding-top: 30px;
 }
 
+
 /* プロフィール */
 .subject_edit_btn{
   padding-top: 20px;
@@ -434,7 +441,14 @@ input[name="my_posts"]{
   transition: all 0.3s;
   border-color: #0000FF;
 }
-
 .arrow.rotate {
   transform: rotate(-45deg);
+}
+/* 掲示板カテゴリー */
+.post_category_inner{
+  display: none;
+}
+.post_category_list{
+  border-bottom: solid gray 1px;
+  width: 300px;
 }
