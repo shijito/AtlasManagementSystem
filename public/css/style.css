@@ -378,6 +378,11 @@ input[name="my_posts"]{
   border: none;
   background-color: #d3d3d3;
   margin-bottom: 10px;
+  padding-left: 10px;
+}
+.search-category select,
+.search-sort select{
+  padding-left: 10px;
 }
 .search-category,
 .search-sort{

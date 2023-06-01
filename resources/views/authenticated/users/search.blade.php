@@ -2,7 +2,7 @@
 
 @section('content')
 <p>ユーザー検索</p>
-<div class="search_content w-100 border d-flex" >
+<div class="search_content w-100 d-flex" >
   <div class="reserve_users_area">
     @foreach($users as $user)
     <div class="border one_person">
@@ -54,7 +54,7 @@
     </div>
     @endforeach
   </div>
-  <div class="search_area w-25 border">
+  <div class="search_area w-25 ">
     <div class="user-search">
       <p class="mt-5" style="font-size:20px;">検索</p>
       <div>
@@ -81,9 +81,9 @@
       <div class="search_conditions-block">
         <p class="m-0 search_conditions"><span>検索条件の追加</span>
         　　　　　　　　　　<a class="arrow" style="border-color:#000000"></a></p>
-        <div class="search_conditions_inner">
+        <div class="search_conditions_inner" style="background-color:#ECF1F6;">
           <div>
-            <label>性別</label>
+            <label class="mt-3">性別</label>
             <div>
               <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
               <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">
@@ -91,7 +91,7 @@
             </div>
           </div>
           <div>
-            <label>権限</label>
+            <label class="mt-3">権限</label>
             <div>
               <select name="role" form="userSearchRequest" class="engineer">
                 <option selected disabled>----</option>
@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="selected_engineer">
-            <label>選択科目</label><!--下記subject追加-->
+            <label class="mt-2">選択科目</label><!--下記subject追加-->
             <div class="subject-checkbox">
               @foreach($subjects as $subject)
               <div class="subject-block">

@@ -19,7 +19,7 @@
   <div class="d-flex">
     <div class="sidebar">
       @section('sidebar')
-      <p style="padding-top: 30px;"><img src="{{ asset('images/my-page.png') }}" ><a href="{{ route('top.show') }}">トップ</a></p>
+      <p style="padding-top: 30px;"><img src="{{ asset('images/my-page.png') }}" ><a href="{{ route('top.show') }}">マイページ</a></p>
       <p><img src="{{ asset('images/logout.png') }}" ><a href="/logout">ログアウト</a></p>
       <p><img src="{{ asset('images/reserve1.png') }}" ><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}">スクール予約</a></p>
       <!--if Auth::user()->role->4!-->
