@@ -15,3 +15,9 @@ $(function(){
         return false;
       });
 });
+
+
+// var setting_resreve ←設定する変数
+// = $(this).attr('setting_resreve');　←htmlで取得した値
+// $('.modal-setting-resreve input').　←htmlで設定しているclassに
+// val(setting_resreve);　←設定した変数を設定する

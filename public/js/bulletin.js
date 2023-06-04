@@ -1,8 +1,30 @@
 $(function () {
-  $('.main_categories').click(function () {
-    var category_id = $(this).attr('category_id');
-    $('.category_num' + category_id).slideToggle();
-  });
+  $('.main_categories').click(function () {         //メインカテゴリーをクリックすると、
+    var category_id = $(this).attr('category_id');  //var category_idに取得したcategory_idを入れる。
+     $('.category_num' + category_id).slideToggle();//.category_numとcategory_idが一致している？箇所の表示を切り替える。
+     $('.arrow').toggleClass("rotate");             //矢印が動く
+   });
+
+  //   $('.main_categories').click(function () {
+  //   $('.sub_categories').slideToggle();
+  //   $('.arrow').toggleClass("rotate");
+  // });
+
+  // $('.main_categories').click(function () {
+  //   $('.arrow').toggleClass("rotate");
+  //   $(this).next().slideToggle();
+  // });
+
+  // category_num
+
+
+  // $('.post_category_list').on('click',function() {
+  // $(this).toggleClass('selected');
+  // $(this).next().slideToggle();
+  // $('.post_category_list').not($(this)).next().slideUp();
+  // $('.post_category_list').not($(this)).removeClass('selected');
+  // $('.arrow').toggleClass("rotate");
+  // });
 
   $(document).on('click', '.like_btn', function (e) {
     e.preventDefault();

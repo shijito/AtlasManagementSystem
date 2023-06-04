@@ -476,6 +476,19 @@ input[name="my_posts"]{
 .arrow.rotate {
   transform: rotate(-45deg);
 }
+.arrow{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(135deg);
+  transition: all 0.3s;
+  border-color: #0000FF;
+}
+/* .post_category_list.open:after { user_search.jp連携の試し記述
+	transform: rotate(225deg);
+} */
 /* 掲示板カテゴリー */
 .post_category_inner{
   display: none;
@@ -484,4 +497,14 @@ input[name="my_posts"]{
   border-bottom: solid gray 1px;
   width: 300px;
   margin-top: 20px;
+}
+
+.post_category_list a{
+  margin-left: 200px;
+}
+.subject_edit_btn a {
+  margin-left: 7px;
+}
+.search_conditions a{
+  margin-left: 170px;
 }

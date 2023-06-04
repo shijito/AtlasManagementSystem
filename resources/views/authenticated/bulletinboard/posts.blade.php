@@ -50,14 +50,14 @@
         <ul>
           @foreach($categories as $category)
             <li class="main_categories post_category_list" category_id="{{ $category->id }}">
-              {{ $category->main_category }}　　　　　　　　　　　　<a class="arrow"></a>
+              {{ $category->main_category }}<a class="arrow"></a>
             </li>
               @foreach($sub_categories as $sub_category)
-              <div class="post_category_inner">
+              <!-- <div class="post_category_inner"> -->
                 @if($category->id == $sub_category->main_category_id)
-                <input type="submit" name="category_posts" class="subcategory_btn" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+                <input type="submit" name="category_num" class="subcategory_btn sub_categories" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
                 @endif
-              </div>
+              <!-- </div> -->
               @endforeach
           @endforeach
         </ul>

@@ -80,7 +80,7 @@
       </div>
       <div class="search_conditions-block">
         <p class="m-0 search_conditions"><span>検索条件の追加</span>
-        　　　　　　　　　　<a class="arrow" style="border-color:#000000"></a></p>
+          <a class="arrow" style="border-color:#000000"></a></p>
         <div class="search_conditions_inner" style="background-color:#ECF1F6;">
           <div>
             <label class="mt-3">性別</label>
