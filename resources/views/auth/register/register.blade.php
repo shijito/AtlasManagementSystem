@@ -24,7 +24,7 @@
               @endif
               <label class="d-block mt-3" style="font-size:13px">姓</label>
               <div class="border-bottom border-primary" style="width:175px;">
-                <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
+                <input type="text" style="width:175px;" class="border-0 over_name" name="over_name">
               </div>
             </div>
             <div class="under_name_block" style="width:140px">
@@ -33,7 +33,7 @@
               @endif
               <label class="d-block mt-3" style="font-size:13px">名</label>
               <div class="border-bottom border-primary" style="width:175px;">
-                <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
+                <input type="text" style="width:175px;px;" class="border-0 under_name" name="under_name">
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@
               @endif
               <label class="d-block m-0" style="font-size:13px">セイ</label>
               <div class="border-bottom border-primary" style="width:175px;">
-                <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
+                <input type="text" style="width:175px;" class="border-0 over_name_kana" name="over_name_kana">
               </div>
             </div>
             <div class="under_name_kana_block" style="width:140px">
@@ -53,7 +53,7 @@
               @endif
               <label class="d-block m-0" style="font-size:13px">メイ</label>
               <div class="border-bottom border-primary" style="width:175px;">
-                <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
+                <input type="text" style="width:175px;" class="border-0 under_name_kana" name="under_name_kana">
               </div>
             </div>
           </div>

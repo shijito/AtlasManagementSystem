@@ -14,7 +14,7 @@ li{
 }
 /* サイドバー */
 .sidebar{
-  width:200px;
+  width:12%;
   height:100vh;
   background-color:#03AAD2;
   font-weight:bold;
@@ -27,7 +27,7 @@ li{
 }
 .sidebar p img{
   background-color:#03AAD2;
-  padding-right: 5px;
+  margin-right: 5px;
   margin-left: 10px;
 }
 
@@ -476,7 +476,7 @@ input[name="my_posts"]{
 .arrow.rotate {
   transform: rotate(-45deg);
 }
-.arrow{
+/* .arrow{
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -485,16 +485,26 @@ input[name="my_posts"]{
   transform: rotate(135deg);
   transition: all 0.3s;
   border-color: #0000FF;
-}
+} */
 /* 掲示板カテゴリー */
 .main_categories{
+  /* display: block; */
   border-bottom: solid gray 1px;
   width: 300px;
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_categories span{
+  display: block;
 }
 
 .main_categories a{
-  margin-left: 200px;
+  display: block;
+  /* margin-left: 200px; */
+  display: flex;
+  margin-top: 9px;
 }
 .subject_edit_btn a {
   margin-left: 7px;

@@ -5,10 +5,10 @@ $(function () {
      $('.arrow'+ category_id).toggleClass("rotate");             //矢印が動く
    });
 
-    $('.main_categories').click(function () {
-    $('.category_num').slideToggle();
-    $('.arrow').toggleClass("rotate");
-  });
+  //   $('.main_categories').click(function () {
+  //   $('.category_num').slideToggle();
+  //   $('.arrow').toggleClass("rotate");
+  // });
 
   $(document).on('click', '.like_btn', function (e) {
     e.preventDefault();
