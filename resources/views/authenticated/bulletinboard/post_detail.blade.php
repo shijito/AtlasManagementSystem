@@ -4,14 +4,19 @@
   <div class="w-50 mt-5">
     <div class="m-3 detail_container" style="border-radius:10px; box-shadow:2px 2px 4px gray;">
       <div class="p-3">
-        <div class="detail_inner_head"> 
-          @if($errors->first('comment'))
-            <span class="error_message">{{ $errors->first('comment') }}</span>
-          @endif
-          <div class="contributor d-flex ml-3">
-            @foreach($post->subcategories as $subcategory)
-              <input type="submit" name="sub_category" class="category_btn" value="{{ $subcategory->sub_category }}" >
-            @endforeach          
+          <div> 
+            @if($errors->first('post_title'))
+              <span class="error_message">{{ $errors->first('post_title') }}</span>
+            @endif
+            @if($errors->first('post_body'))
+              <span class="error_message">{{ $errors->first('post_body') }}</span>
+            @endif
+          </div>
+          <div class="detail_inner_head">
+            <div class="contributor d-flex">
+              @foreach($post->subcategories as $subcategory)
+                <input type="submit" name="sub_category" class="category_btn" value="{{ $subcategory->sub_category }}" >
+              @endforeach          
           </div>
           <div>
             <span class="edit-modal-open btn btn-primary" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>

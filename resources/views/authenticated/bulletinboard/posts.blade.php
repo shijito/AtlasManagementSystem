@@ -56,7 +56,7 @@
               @foreach($sub_categories as $sub_category)
                 @if($category->id == $sub_category->main_category_id)
                 <li>
-                  <input type="submit" name="" class="subcategory_btn category_num"  
+                  <input type="submit" name="" class="subcategory_btn category_num{{ $category->id }}"  
                   value="{{ $sub_category->sub_category }}" form="postSearchRequest">
                 </li>
                 @endif
