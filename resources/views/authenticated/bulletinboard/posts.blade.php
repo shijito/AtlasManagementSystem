@@ -50,7 +50,7 @@
         <ul>
           @foreach($categories as $category)
             <li class="main_categories" category_id="{{ $category->id }}">
-              <span>{{ $category->main_category }}</span><a class="arrow"></a>
+              <span>{{ $category->main_category }}</span><a class="arrow arrow{{ $category->id }}"></a>
             </li>
             <div class="sub_categories"> 
               @foreach($sub_categories as $sub_category)
