@@ -49,16 +49,19 @@
         <p class="mt-4">カテゴリー検索</p>
         <ul>
           @foreach($categories as $category)
-            <li class="main_categories post_category_list" category_id="{{ $category->id }}">
-              {{ $category->main_category }}<a class="arrow"></a>
+            <li class="main_categories" category_id="{{ $category->id }}">
+              <span>{{ $category->main_category }}</span><a class="arrow"></a>
             </li>
+            <div class="sub_categories"> 
               @foreach($sub_categories as $sub_category)
-              <!-- <div class="post_category_inner"> -->
                 @if($category->id == $sub_category->main_category_id)
-                <input type="submit" name="category_num" class="subcategory_btn sub_categories" value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+                <li>
+                  <input type="submit" name="" class="subcategory_btn category_num"  
+                  value="{{ $sub_category->sub_category }}" form="postSearchRequest">
+                </li>
                 @endif
-              <!-- </div> -->
               @endforeach
+            </div>
           @endforeach
         </ul>
       </div>

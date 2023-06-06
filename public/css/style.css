@@ -159,7 +159,7 @@ li{
 }
 
 /* 掲示板 */
-.sub_categories{
+.sub_categories li input{
   display:none;
 }
 .post_create_area{
@@ -330,9 +330,9 @@ input[name="my_posts"]{
 }
 .main_categories span,
 .sub_categories li input{
-  list-style:none;
+  /* list-style:none; */
   cursor:pointer;
-  display: flex;
+  /* display: flex; */
 }
 
 /* ユーザー検索 */
@@ -486,20 +486,14 @@ input[name="my_posts"]{
   transition: all 0.3s;
   border-color: #0000FF;
 }
-/* .post_category_list.open:after { user_search.jp連携の試し記述
-	transform: rotate(225deg);
-} */
 /* 掲示板カテゴリー */
-.post_category_inner{
-  display: none;
-}
-.post_category_list{
+.main_categories{
   border-bottom: solid gray 1px;
   width: 300px;
   margin-top: 20px;
 }
 
-.post_category_list a{
+.main_categories a{
   margin-left: 200px;
 }
 .subject_edit_btn a {
