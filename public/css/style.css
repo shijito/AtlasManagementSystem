@@ -14,7 +14,7 @@ li{
 }
 /* サイドバー */
 .sidebar{
-  width:12%;
+  width:14%;
   height:100vh;
   background-color:#03AAD2;
   font-weight:bold;
@@ -339,8 +339,8 @@ input[name="my_posts"]{
 .reserve_users_area{
   display:flex;
   flex-wrap:wrap;
-  width:1150px;
-  margin:10px auto;
+  width:67%;
+  margin:30px auto;
   height:80vh;
   overflow: scroll;
   padding:10px;
